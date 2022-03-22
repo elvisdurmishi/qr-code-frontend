@@ -1,13 +1,51 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+    .sidebar-icon {
+        @apply relative flex items-center justify-center rounded-full my-2 text-textPrimary h-12 w-12
+        hover:bg-secondary hover:text-white hover:shadow-lg
+        transition-all duration-100 ease-linear
+        cursor-pointer;
+    }
+
+    .sidebar-tooltip {
+        @apply absolute w-auto p-2 m-2 min-w-max left-16
+        rounded-md shadow-md
+        text-white bg-secondary
+        text-xs font-bold
+        transition-all duration-100 scale-0 origin-left
+    }
+
+    .accordion {
+        @apply bg-blue-400 text-white p-4 rounded-2xl my-2
+        text-sm uppercase font-bold
+        transition-all duration-100 ease-linear
+    }
+
+    .accordion-content {
+        @apply w-auto my-2 min-w-max left-16
+        text-white
+        text-xs font-bold
+        transition-all duration-100 ease-linear scale-0 hidden origin-top
+    }
+
+    .accordion-content-item {
+        @apply bg-blue-300 rounded-2xl shadow-md p-4
+    }
+
+    .button {
+        @apply flex items-center justify-center rounded-full px-12 py-4 my-2
+        default:bg-primary text-white shadow-lg
+        hover:brightness-110
+        cursor-pointer
+        transition-all duration-100 ease-linear
+    }
+
+    .input {
+        @apply p-3 rounded-full text-black outline-0
+        focus:rounded-xl
+        transition-all duration-100 ease-linear
+    }
 }
