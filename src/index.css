@@ -10,6 +10,10 @@
         cursor-pointer;
     }
 
+    .sidebar-icon.active {
+        @apply bg-secondary text-white shadow-lg
+    }
+
     .sidebar-tooltip {
         @apply absolute w-auto p-2 m-2 min-w-max left-16
         rounded-md shadow-md
@@ -47,5 +51,9 @@
         @apply p-3 rounded-full text-black outline-0
         focus:rounded-xl
         transition-all duration-100 ease-linear
+    }
+
+    .main-input {
+        @apply appearance-none bg-transparent outline-0 placeholder-blue-400 font-bold text-5xl py-5
     }
 }
