@@ -32,7 +32,7 @@
         @apply w-auto my-2 min-w-max left-16 flex
         text-white
         text-xs font-bold
-        transition-all duration-100 ease-linear scale-0 hidden origin-top
+        transition-all duration-100 ease-linear scale-100 justify-center origin-top
     }
 
     .accordion-content-item {
@@ -48,8 +48,8 @@
     }
 
     .input {
-        @apply p-3 rounded-full text-black outline-0
-        focus:rounded-xl
+        @apply p-3 appearance-none bg-white text-blue-400 placeholder-blue-400 outline-0 font-bold
+        rounded-xl
         transition-all duration-100 ease-linear
     }
 

@@ -96,7 +96,7 @@ const LabelInput = ({ label, setLabel }) => {
       onChange={(e) => {
         setLabel(e.target.value);
       }}
-      placeholder={"Label"}
+      placeholder={"Label at the bottom"}
     />
   );
 };
