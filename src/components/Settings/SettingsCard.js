@@ -1,4 +1,4 @@
-import QRCode from "../../assets/qr-code.png";
+// import QRCode from "../../assets/qr-code.png";
 import Button from "../Common/Button";
 import Accordion from "./Accordion";
 import { CgSoftwareDownload } from "react-icons/cg";
@@ -7,15 +7,16 @@ const SettingsCard = ({ generate }) => {
   return (
     <div
       className={
-        "bg-secondary h-[90%] w-3/12 rounded-3xl grid grid-rows-4 gap-4 place-items-center p-8"
+        "bg-secondary rounded-3xl grid grid-rows-3 px-16 place-items-center"
       }
     >
-      <img src={QRCode} alt={"qr-code"} className={"w-48 h-48 p-4"} />
+      <div className="qr-code-image" />
+      {/* <img src={QRCode} alt={"qr-code"} className={"w-48 h-48 p-4"} /> */}
       <div className={"flex flex-col items-center w-full row-span-2"}>
         <Accordion text={"Colors"} items={<Colors />} />
         <Accordion text={"Label"} items={<LabelInput />} />
       </div>
-      <div className={"flex gap-4"}>
+      <div className={"flex gap-4 my-5"}>
         <Button
           onClick={() => {
             generate();
@@ -50,9 +51,7 @@ const Colors = () => {
 };
 
 const LabelInput = () => {
-  return (
-    <input className={"input w-full"} type={"text"} placeholder={"Label"} />
-  );
+  return <input className={"input"} type={"text"} placeholder={"Label"} />;
 };
 
 export default SettingsCard;

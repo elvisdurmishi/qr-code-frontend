@@ -20,10 +20,18 @@ function App() {
   };
 
   return (
-    <div className="App flex justify-between px-16 items-center h-screen w-100">
-      <Sidebar type={type} setType={setType} />
-      <MainInput />
-      <SettingsCard generate={generateQRCode} />
+    <div className="App">
+      <div className="tabs-container">
+        <div className="tab active" id="1">
+          <div className="main-input-content">
+            <Sidebar type={type} setType={setType} />
+            <MainInput />
+          </div>
+        </div>
+        <div className="tab active" id="2">
+          <SettingsCard generate={generateQRCode} />
+        </div>
+      </div>
     </div>
   );
 }

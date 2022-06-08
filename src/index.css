@@ -15,7 +15,7 @@
     }
 
     .sidebar-tooltip {
-        @apply absolute w-auto p-2 m-2 min-w-max left-16
+        @apply absolute w-auto p-2 m-2 min-w-max lg:left-16
         rounded-md shadow-md
         text-white bg-secondary
         text-xs font-bold
@@ -29,7 +29,7 @@
     }
 
     .accordion-content {
-        @apply w-auto my-2 min-w-max left-16
+        @apply w-auto my-2 min-w-max left-16 flex
         text-white
         text-xs font-bold
         transition-all duration-100 ease-linear scale-0 hidden origin-top
@@ -54,6 +54,33 @@
     }
 
     .main-input {
-        @apply appearance-none bg-transparent outline-0 placeholder-blue-400 font-bold text-5xl py-5
+        @apply appearance-none bg-transparent outline-0 placeholder-blue-400 font-bold lg:text-5xl text-2xl
+    }
+
+    .tabs-container {
+        @apply grid grid-cols-2 gap-4 place-items-center h-[100vh] w-[100%]
+    }
+
+    .tab {
+        @apply h-[100%] flex justify-center items-center
+    }
+
+    .main-input-content {
+        @apply grid grid-rows-1 grid-cols-3 place-items-center h-full
+    }
+
+    .type-select-sidebar {
+        @apply col-span-1 shadow-lg rounded-full bg-white h-[50%] px-2 flex flex-col justify-center 
+    }
+
+    .main-input-container {
+        @apply col-span-2 flex flex-col w-[100%]
+    }
+
+    .qr-code-image {
+        background-image: url("./assets/qr-code.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        @apply w-48 h-48 m-2
     }
 }

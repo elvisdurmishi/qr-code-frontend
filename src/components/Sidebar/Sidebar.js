@@ -4,11 +4,7 @@ import SidebarIcon from "./SidebarIcon";
 
 const Sidebar = ({ type, setType }) => {
   return (
-    <div
-      className={
-        "h-[50%] w-20 m-0 flex flex-col items-center justify-center shadow-lg rounded-full bg-white"
-      }
-    >
+    <div className="type-select-sidebar">
       <SidebarIcon
         icon={<MdTextFields size={28} />}
         text={"Text"}
