@@ -55,22 +55,24 @@ function App() {
 
   return (
     <div className="App">
-      <div className="tabs-container">
-        <div className="tab active" id="1">
-          <div className="main-input-content">
-            <Sidebar type={type} setType={setType} />
-            <MainInput body={body} setBody={setBody} type={type} />
+      <div className="content-container">
+        <div className="tabs-container">
+          <div className="tab active" id="1">
+            <div className="main-input-content">
+              <Sidebar type={type} setType={setType} />
+              <MainInput body={body} setBody={setBody} type={type} />
+            </div>
           </div>
-        </div>
-        <div className="tab active" id="2">
-          <SettingsCard
-            generate={generateQRCode}
-            colors={colors}
-            setColors={setColors}
-            label={label}
-            setLabel={setLabel}
-            resetInput={resetInput}
-          />
+          <div className="tab active" id="2">
+            <SettingsCard
+              generate={generateQRCode}
+              colors={colors}
+              setColors={setColors}
+              label={label}
+              setLabel={setLabel}
+              resetInput={resetInput}
+            />
+          </div>
         </div>
       </div>
     </div>

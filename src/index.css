@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+    .content-container {
+        @apply m-0 p-8 bg-white h-[100vh]
+    }
+
     .sidebar-icon {
         @apply relative flex items-center justify-center rounded-full my-2 text-textPrimary h-12 w-12
         hover:bg-secondary hover:text-white hover:shadow-lg
@@ -58,7 +62,7 @@
     }
 
     .tabs-container {
-        @apply grid grid-cols-2 gap-4 place-items-center h-[100vh] w-[100%]
+        @apply grid grid-cols-2 gap-4 place-items-center h-[100%] w-[100%] bg-primary rounded-3xl
     }
 
     .tab {
@@ -81,6 +85,6 @@
         background-image: url("./assets/qr-code.png");
         background-size: contain;
         background-repeat: no-repeat;
-        @apply w-48 h-48 m-2
+        @apply w-32 h-32 m-2
     }
 }
