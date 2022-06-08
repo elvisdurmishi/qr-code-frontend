@@ -11,7 +11,6 @@ const SettingsCard = ({ generate }) => {
       }
     >
       <div className="qr-code-image" />
-      {/* <img src={QRCode} alt={"qr-code"} className={"w-48 h-48 p-4"} /> */}
       <div className={"flex flex-col items-center w-full row-span-2"}>
         <Accordion text={"Colors"} items={<Colors />} />
         <Accordion text={"Label"} items={<LabelInput />} />
