@@ -4,4 +4,4 @@ This is a web app which uses [this](https://qr-code-generator-api.herokuapp.com/
 
 ## Access it Live
 
-Here you can try this web application for yourself.
+[Here](https://qr-c0de-generator.netlify.app/) you can try this web application for yourself.
