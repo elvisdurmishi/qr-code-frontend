@@ -55,6 +55,7 @@ const MainPage = () => {
     setBody("");
     setColors(initialColors);
     setLabel("");
+    setActiveTab(1);
   };
 
   return (
