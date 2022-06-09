@@ -21,7 +21,6 @@ const SettingsCard = ({
         <Icon
           backgroundColor={colors.background}
           foregroundColor={colors.foreground}
-          className={"rounded-xl"}
         />
       </div>
       <div className={"flex flex-col items-center w-full row-span-2"}>
