@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
 const MainInput = ({ body, setBody, type }) => {
+  const htmlElRef = useRef(null);
+  const setFocus = () => {
+    htmlElRef.current && htmlElRef.current.focus();
+  };
+
+  useEffect(() => {
+    setFocus();
+  });
+
   return (
     <div className="main-input-container">
       <input
+        ref={htmlElRef}
         type={type}
         className="main-input"
         placeholder={type === "text" ? "Enter your text" : "Enter your url"}
