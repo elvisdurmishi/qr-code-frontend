@@ -1,4 +1,4 @@
-// import QRCode from "../../assets/qr-code.png";
+import Icon from "../../assets/QrCode.js";
 import Button from "../Common/Button";
 import Accordion from "./Accordion";
 import { CgSoftwareDownload } from "react-icons/cg";
@@ -17,7 +17,13 @@ const SettingsCard = ({
         "bg-secondary rounded-3xl grid grid-rows-3 lg:px-16 px-8 place-items-center max-h-[90%]"
       }
     >
-      <div className="qr-code-image" />
+      <div className="qr-code-image">
+        <Icon
+          backgroundColor={colors.background}
+          foregroundColor={colors.foreground}
+          className={"rounded-xl"}
+        />
+      </div>
       <div className={"flex flex-col items-center w-full row-span-2"}>
         <Accordion
           text={"Colors"}
