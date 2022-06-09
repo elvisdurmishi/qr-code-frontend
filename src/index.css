@@ -62,23 +62,30 @@
     }
 
     .tabs-container {
-        @apply grid grid-cols-2 gap-4 place-items-center h-[100%] w-[100%] bg-primary rounded-3xl
+        @apply grid lg:grid-cols-2 gap-4 place-items-center h-[100%] w-[100%] bg-primary rounded-3xl
     }
 
     .tab {
-        @apply h-[100%] flex justify-center items-center
+        @apply lg:h-[100%] lg:flex hidden justify-center items-center
+    }
+
+    .active {
+        @apply flex
     }
 
     .main-input-content {
-        @apply grid grid-rows-1 grid-cols-3 place-items-center h-full
+        @apply grid lg:grid-rows-1 grid-rows-3
+        lg:px-0 px-8
+        lg:grid-cols-3 grid-cols-1 
+        place-items-center h-full
     }
 
     .type-select-sidebar {
-        @apply col-span-1 shadow-lg rounded-full bg-white h-[50%] px-2 flex flex-col justify-center 
+        @apply col-span-1 shadow-lg rounded-full bg-white lg:h-[50%] px-2 flex lg:flex-col justify-center
     }
 
     .main-input-container {
-        @apply col-span-2 flex flex-col w-[100%]
+        @apply col-span-2 flex flex-col w-[100%] row-span-2
     }
 
     .qr-code-image {
@@ -86,5 +93,14 @@
         background-size: contain;
         background-repeat: no-repeat;
         @apply w-32 h-32 m-2
+    }
+
+    .tab-button-container {
+        @apply lg:hidden relative scale-0
+        transition-all duration-100 origin-right 
+    }
+
+    .tab-change-button {
+        @apply absolute top-[-15px] right-[-15px] rounded-full text-white bg-secondary p-3
     }
 }

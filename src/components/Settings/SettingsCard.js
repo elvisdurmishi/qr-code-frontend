@@ -14,7 +14,7 @@ const SettingsCard = ({
   return (
     <div
       className={
-        "bg-secondary rounded-3xl grid grid-rows-3 px-16 place-items-center max-h-[90%]"
+        "bg-secondary rounded-3xl grid grid-rows-3 lg:px-16 px-8 place-items-center max-h-[90%]"
       }
     >
       <div className="qr-code-image" />
