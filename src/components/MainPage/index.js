@@ -63,11 +63,11 @@ const MainPage = () => {
         <button
           className="tab-change-button"
           onClick={() => {
-            let newTab = activeTab == 1 ? 2 : 1;
+            let newTab = activeTab === 1 ? 2 : 1;
             setActiveTab(newTab);
           }}
         >
-          {activeTab == 1 ? (
+          {activeTab === 1 ? (
             <MdOutlineArrowForwardIos size={28} />
           ) : (
             <MdOutlineArrowBackIos size={28} />
