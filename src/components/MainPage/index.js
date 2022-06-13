@@ -86,7 +86,6 @@ const MainPage = () => {
               type={type}
               error={error}
               setError={setError}
-              setActiveTab={setActiveTab}
             />
           </div>
         </div>
@@ -100,6 +99,7 @@ const MainPage = () => {
             label={label}
             setLabel={setLabel}
             resetInput={resetInput}
+            setActiveTab={setActiveTab}
           />
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-const MainInput = ({ body, setBody, type, error, setError, setActiveTab }) => {
+const MainInput = ({ body, setBody, type, error, setError }) => {
   const htmlElRef = useRef(null);
   const setFocus = () => {
     htmlElRef.current && htmlElRef.current.focus();
@@ -21,7 +21,6 @@ const MainInput = ({ body, setBody, type, error, setError, setActiveTab }) => {
           setBody(e.target.value);
           if (error && body.length > 0) {
             setError(false);
-            setActiveTab(1);
           }
         }}
       />

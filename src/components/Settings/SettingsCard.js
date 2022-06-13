@@ -12,6 +12,7 @@ const SettingsCard = ({
   resetInput,
   body,
   setError,
+  setActiveTab,
 }) => {
   return (
     <div
@@ -40,6 +41,7 @@ const SettingsCard = ({
           onClick={() => {
             if (!body) {
               setError(true);
+              setActiveTab(1);
             }
             generate();
             resetInput();
