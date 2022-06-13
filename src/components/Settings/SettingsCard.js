@@ -10,6 +10,8 @@ const SettingsCard = ({
   label,
   setLabel,
   resetInput,
+  body,
+  setError,
 }) => {
   return (
     <div
@@ -36,6 +38,9 @@ const SettingsCard = ({
       <div className={"flex gap-4 my-5"}>
         <Button
           onClick={() => {
+            if (!body) {
+              setError(true);
+            }
             generate();
             resetInput();
           }}

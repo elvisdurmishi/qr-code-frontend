@@ -100,4 +100,8 @@
     .tab-change-button {
         @apply absolute top-[-15px] right-[-15px] rounded-full text-white bg-secondary p-3
     }
+
+    .input-error {
+        @apply animate-wiggle border-2 border-red-400 rounded-lg !placeholder-red-500
+    }
 }

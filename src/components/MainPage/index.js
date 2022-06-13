@@ -16,6 +16,7 @@ const MainPage = () => {
     foreground_color: [255, 255, 255],
   };
 
+  const [error, setError] = useState(false);
   const [type, setType] = useState("text");
   const [body, setBody] = useState("");
   const [colors, setColors] = useState(initialColors);
@@ -79,11 +80,20 @@ const MainPage = () => {
         <div className={`tab ${activeTab === 1 && "active"}`} id="1">
           <div className="main-input-content">
             <Sidebar type={type} setType={setType} />
-            <MainInput body={body} setBody={setBody} type={type} />
+            <MainInput
+              body={body}
+              setBody={setBody}
+              type={type}
+              error={error}
+              setError={setError}
+              setActiveTab={setActiveTab}
+            />
           </div>
         </div>
         <div className={`tab ${activeTab === 2 && "active"}`} id="2">
           <SettingsCard
+            body={body}
+            setError={setError}
             generate={generateQRCode}
             colors={colors}
             setColors={setColors}
