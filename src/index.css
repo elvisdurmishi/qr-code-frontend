@@ -93,7 +93,7 @@
     }
 
     .tab-button-container {
-        @apply lg:hidden relative scale-0
+        @apply lg:hidden fixed scale-0 bottom-[4.5rem] right-12
         transition-all duration-100 origin-right 
     }
 
