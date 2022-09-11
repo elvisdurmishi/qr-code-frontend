@@ -22,7 +22,7 @@ const MainPage = () => {
   const [colors, setColors] = useState(initialColors);
   const [label, setLabel] = useState("");
   const [activeTab, setActiveTab] = useState(1);
-  const baseURL = "https://qrcodegenerator.up.railway.app/";
+  const baseURL = "https://qrcodegenerator.up.railway.app/api";
 
   const generateQRCode = () => {
     axios
