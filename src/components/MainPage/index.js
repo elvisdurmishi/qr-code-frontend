@@ -39,7 +39,7 @@ const MainPage = () => {
         setLoading(false);
         handleResponse(response);
       })
-      .catch((error) => {
+      .catch(() => {
         setLoading(false);
       });
   };
