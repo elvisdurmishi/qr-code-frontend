@@ -1,4 +1,4 @@
-const Button = ({ icon, text = "Button", color, onClick }) => (
+const Button = ({ icon, text = 'Button', color, onClick }) => (
   <div
     className={`button bg-lightblue`}
     onClick={() => {

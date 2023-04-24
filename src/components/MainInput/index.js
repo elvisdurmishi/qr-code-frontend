@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from 'react';
+
 const MainInput = ({ body, setBody, type, error, setError }) => {
   const htmlElRef = useRef(null);
   const setFocus = () => {
@@ -7,15 +8,15 @@ const MainInput = ({ body, setBody, type, error, setError }) => {
 
   useEffect(() => {
     setFocus();
-  });
+  }, []);
 
   return (
-    <div className="main-input-container">
+    <div className='main-input-container'>
       <input
         ref={htmlElRef}
         type={type}
-        className={`main-input ${error ? "input-error" : ""}`}
-        placeholder={type === "text" ? "Enter your text" : "Enter your url"}
+        className={`main-input ${error ? 'input-error' : ''}`}
+        placeholder={type === 'text' ? 'Enter your text' : 'Enter your url'}
         value={body}
         onChange={(e) => {
           setBody(e.target.value);
@@ -24,9 +25,7 @@ const MainInput = ({ body, setBody, type, error, setError }) => {
           }
         }}
       />
-      <label className="text-gray-500">
-        Your QR code will be generated automatically.
-      </label>
+      <label className='text-gray-500'>Your QR code will be generated automatically.</label>
     </div>
   );
 };

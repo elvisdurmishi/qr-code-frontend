@@ -1,8 +1,8 @@
-const Accordion = ({ text = "Default accordion text", items = null }) => {
+const Accordion = ({ text = 'Default accordion text', items = null }) => {
   return (
-    <div className={"flex flex-col accordion group w-[100%] text-center"}>
+    <div className={'flex flex-col accordion group w-[100%] text-center'}>
       {text}
-      <div className={"accordion-content"}>{items}</div>
+      <div className={'accordion-content'}>{items}</div>
     </div>
   );
 };

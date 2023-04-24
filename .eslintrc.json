@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "env": {
+    "browser": true
+  },
+  "settings": {
+    "react": {
+      "pragma": "React"
+    }
+  },
+  "rules": {
+    "complexity": [
+      "error",
+      10
+    ],
+    "no-await-in-loop": "warn",
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "prefer-promise-reject-errors": "warn",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off"
+  }
+}

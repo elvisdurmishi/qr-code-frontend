@@ -1,7 +1,7 @@
-import Icon from "../../assets/QrCode.js";
-import Button from "../Common/Button";
-import Accordion from "./Accordion";
-import { CgSoftwareDownload } from "react-icons/cg";
+import Icon from '../../assets/QrCode.js';
+import Button from '../Common/Button';
+import Accordion from './Accordion';
+import { CgSoftwareDownload, CgCircleci } from 'react-icons/cg';
 
 const SettingsCard = ({
   generate,
@@ -13,42 +13,43 @@ const SettingsCard = ({
   body,
   setError,
   setActiveTab,
+  loading,
 }) => {
+  const getButtonIcon = () => {
+    if (loading) {
+      return <CgCircleci size={28} className={'loading-button'} />;
+    }
+
+    return <CgSoftwareDownload size={28} />;
+  };
+
   return (
     <div
       className={
-        "bg-secondary rounded-3xl grid grid-rows-3 lg:px-16 px-8 place-items-center max-h-[90%]"
+        'bg-secondary rounded-3xl grid grid-rows-3 lg:px-16 px-8 place-items-center max-h-[90%]'
       }
     >
-      <div className="qr-code-image">
-        <Icon
-          backgroundColor={colors.background}
-          foregroundColor={colors.foreground}
-        />
+      <div className='qr-code-image'>
+        <Icon backgroundColor={colors.background} foregroundColor={colors.foreground} />
       </div>
-      <div className={"flex flex-col items-center w-full row-span-2"}>
-        <Accordion
-          text={"Colors"}
-          items={<Colors colors={colors} setColors={setColors} />}
-        />
-        <Accordion
-          text={"Label"}
-          items={<LabelInput label={label} setLabel={setLabel} />}
-        />
+      <div className={'flex flex-col items-center w-full row-span-2'}>
+        <Accordion text={'Colors'} items={<Colors colors={colors} setColors={setColors} />} />
+        <Accordion text={'Label'} items={<LabelInput label={label} setLabel={setLabel} />} />
       </div>
-      <div className={"flex gap-4 my-5"}>
+      <div className={'flex gap-4 my-5'}>
         <Button
           onClick={() => {
             if (!body) {
               setError(true);
               setActiveTab(1);
+              return;
             }
             generate();
             resetInput();
           }}
-          icon={<CgSoftwareDownload size={28} />}
-          text={"PNG"}
-          color={"lightblue"}
+          icon={getButtonIcon()}
+          text={loading ? '' : 'PNG'}
+          color={'lightblue'}
         />
       </div>
     </div>
@@ -57,43 +58,43 @@ const SettingsCard = ({
 
 const Colors = ({ colors, setColors }) => {
   const handleColorChange = (type, color) => {
-    var hex_code = color.split("");
-    var red = parseInt(hex_code[1] + hex_code[2], 16);
-    var green = parseInt(hex_code[3] + hex_code[4], 16);
-    var blue = parseInt(hex_code[5] + hex_code[6], 16);
-    var rgb = [red, green, blue];
+    let hex_code = color.split('');
+    let red = parseInt(hex_code[1] + hex_code[2], 16);
+    let green = parseInt(hex_code[3] + hex_code[4], 16);
+    let blue = parseInt(hex_code[5] + hex_code[6], 16);
+    let rgb = [red, green, blue];
     let newColors = Object.assign({}, colors);
     newColors[type] = color;
-    newColors[type + "_color"] = rgb;
+    newColors[type + '_color'] = rgb;
 
     setColors(newColors);
   };
 
   return (
-    <div className={"flex flex-col gap-3"}>
-      <div className={"flex flex-col items-center accordion-content-item"}>
+    <div className={'flex flex-col gap-3'}>
+      <div className={'flex flex-col items-center accordion-content-item'}>
         <input
-          type="color"
-          id="background"
-          name="head"
+          type='color'
+          id='background'
+          name='head'
           value={colors.background}
           onChange={(e) => {
-            handleColorChange("background", e.target.value);
+            handleColorChange('background', e.target.value);
           }}
         />
-        <label htmlFor="background">Background</label>
+        <label htmlFor='background'>Background</label>
       </div>
-      <div className={"flex flex-col items-center accordion-content-item"}>
+      <div className={'flex flex-col items-center accordion-content-item'}>
         <input
-          type="color"
-          id="foreground"
-          name="head"
+          type='color'
+          id='foreground'
+          name='head'
           value={colors.foreground}
           onChange={(e) => {
-            handleColorChange("foreground", e.target.value);
+            handleColorChange('foreground', e.target.value);
           }}
         />
-        <label htmlFor="foreground">Foreground</label>
+        <label htmlFor='foreground'>Foreground</label>
       </div>
     </div>
   );
@@ -102,13 +103,13 @@ const Colors = ({ colors, setColors }) => {
 const LabelInput = ({ label, setLabel }) => {
   return (
     <input
-      className={"input"}
-      type={"text"}
+      className={'input'}
+      type={'text'}
       value={label}
       onChange={(e) => {
         setLabel(e.target.value);
       }}
-      placeholder={"Label at the bottom"}
+      placeholder={'Label at the bottom'}
     />
   );
 };
